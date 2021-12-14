@@ -1,4 +1,4 @@
-package com.godzuche.truckport
+package com.godzuche.truckport.ui.onboarding
 
 import android.os.Bundle
 import android.text.Layout
@@ -6,15 +6,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
-import com.godzuche.truckport.adapters.OnBoardingViewPager2Adapter
+import com.godzuche.truckport.R
 import com.godzuche.truckport.models.OnBoardingData
 
 
 class OnBoardingFragment : Fragment() {
 
     private lateinit var onBoardingViewPagerAdapter: OnBoardingViewPager2Adapter
-    private lateinit var tabLayout: Layout
     private lateinit var onBoardingViewPager: ViewPager2
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,9 +32,47 @@ class OnBoardingFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
-        onBoardingViewPagerAdapter = OnBoardingViewPager2Adapter(requireContext(), getOnBoardingItems())
+        onBoardingViewPagerAdapter = OnBoardingViewPager2Adapter(getOnBoardingItems())
         onBoardingViewPager = view.findViewById(R.id.pager)
         onBoardingViewPager.adapter = onBoardingViewPagerAdapter
+
+        // Listening for the Next Button clicks
+        onBoardingViewPagerAdapter.setOnItemSelectedNextListener { itemPosition ->
+            if (itemPosition < (getOnBoardingItems().size - 1)) {
+                gotoNextScreen(itemPosition)
+            } else {
+                gotoSignUpFragment()
+            }
+        }
+
+        // Listening for the other Button clicks
+        onBoardingViewPagerAdapter.setOnItemSelectedLoginListener { itemPosition ->
+            if (itemPosition < (getOnBoardingItems().size - 1)) {
+                gotoLoginFragment()
+            } else {
+                gotoSignUpFragment()
+            }
+        }
+
+        /*onBoardingViewPager.registerOnPageChangeCallback(object :
+            ViewPager2.OnPageChangeCallback() {
+            override fun onPageSelected(position: Int) {
+                super.onPageSelected(position)
+            }
+        })*/
+        (onBoardingViewPager.getChildAt(0) as RecyclerView).overScrollMode = RecyclerView.OVER_SCROLL_NEVER
+    }
+
+    private fun gotoLoginFragment() {
+        findNavController().navigate(OnBoardingFragmentDirections.actionOnboardingFragmentToLoginFragment())
+    }
+
+    private fun gotoSignUpFragment() {
+        findNavController().navigate(OnBoardingFragmentDirections.actionOnboardingFragmentToSignUpFragment())
+    }
+
+    private fun gotoNextScreen(itemPosition: Int) {
+        onBoardingViewPager.setCurrentItem((itemPosition + 1), true)
     }
 
     private fun getOnBoardingItems(): List<OnBoardingData> {

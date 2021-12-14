@@ -57,17 +57,22 @@ class MainActivity : AppCompatActivity() {
     private fun showTopAppBarAndBottomNav() {
         binding.appBarMain.toolbarMain.visibility = View.VISIBLE
         bottomNavigationView.visibility = View.VISIBLE
+        showSystemBars()
     }
 
     private fun hideTopAppBarAndBottomNav() {
-        TransitionManager.beginDelayedTransition(binding.root, Slide(Gravity.BOTTOM).excludeTarget(R.id.nav_host_fragment, true))
         binding.appBarMain.toolbarMain.visibility = View.GONE
         bottomNavigationView.visibility = View.GONE
         hideSystemBars()
     }
 
     private fun hideSystemBars() {
-        window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
+//        window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
+        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
+    }
+
+    private fun showSystemBars() {
+        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_VISIBLE
     }
 
 }

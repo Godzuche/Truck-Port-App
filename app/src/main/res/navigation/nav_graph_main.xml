@@ -7,7 +7,28 @@
 
     <fragment
         android:id="@+id/onboardingFragment"
-        android:name="com.godzuche.truckport.OnBoardingFragment"
+        android:name="com.godzuche.truckport.ui.onboarding.OnBoardingFragment"
         android:label="fragment_onboarding"
-        tools:layout="@layout/fragment_onboarding" />
+        tools:layout="@layout/fragment_onboarding" >
+        <action
+            android:id="@+id/action_onboardingFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment"
+            app:popUpTo="@id/nav_graph_main.xml"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_onboardingFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/nav_graph_main.xml"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.godzuche.truckport.auth.signup.SignUpFragment"
+        android:label="fragment_sign_up"
+        tools:layout="@layout/fragment_sign_up" />
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.godzuche.truckport.auth.login.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" />
 </navigation>
