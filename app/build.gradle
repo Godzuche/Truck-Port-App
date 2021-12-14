@@ -41,7 +41,7 @@ dependencies {
 
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.4.0'
-    implementation 'com.google.android.material:material:1.4.0'
+    implementation 'com.google.android.material:material:1.6.0-alpha01'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.2'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     testImplementation 'junit:junit:4.+'
@@ -68,5 +68,8 @@ dependencies {
 
     // Splash screen api
     implementation 'androidx.core:core-splashscreen:1.0.0-alpha02'
+
+    // ViewPager 2
+    implementation("androidx.viewpager2:viewpager2:1.1.0-beta01")
 
 }

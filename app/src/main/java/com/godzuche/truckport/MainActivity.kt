@@ -1,12 +1,20 @@
 package com.godzuche.truckport
 
+import android.content.pm.ActivityInfo
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.*
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.WindowInsetsControllerCompat
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import androidx.transition.Slide
+import androidx.transition.TransitionManager
 import com.godzuche.truckport.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
@@ -24,6 +32,9 @@ class MainActivity : AppCompatActivity() {
         installSplashScreen()
         setContentView(view)
 
+        // Set orientation to portrait
+        this.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
+
         val toolbar = binding.appBarMain.toolbarMain
         setSupportActionBar(toolbar)
         bottomNavigationView = binding.bottomNavView
@@ -34,5 +45,29 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController)
 
         bottomNavigationView.setupWithNavController(navController)
+
+        navController.addOnDestinationChangedListener { controller, destination, arguments ->
+            when (destination.id) {
+                R.id.onboardingFragment -> hideTopAppBarAndBottomNav()
+                else -> showTopAppBarAndBottomNav()
+            }
+        }
     }
+
+    private fun showTopAppBarAndBottomNav() {
+        binding.appBarMain.toolbarMain.visibility = View.VISIBLE
+        bottomNavigationView.visibility = View.VISIBLE
+    }
+
+    private fun hideTopAppBarAndBottomNav() {
+        TransitionManager.beginDelayedTransition(binding.root, Slide(Gravity.BOTTOM).excludeTarget(R.id.nav_host_fragment, true))
+        binding.appBarMain.toolbarMain.visibility = View.GONE
+        bottomNavigationView.visibility = View.GONE
+        hideSystemBars()
+    }
+
+    private fun hideSystemBars() {
+        window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
+    }
+
 }
