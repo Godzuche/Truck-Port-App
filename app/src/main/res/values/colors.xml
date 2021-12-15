@@ -9,8 +9,13 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="main_red">#FA1717</color>
+    <color name="main_red_ripple">#1FFA1717</color>
     <color name="pale_purple">#F1D3FF</color>
     <color name="pale_blue">#D3E7FF</color>
     <color name="pale_pink">#FFD3D3</color>
     <color name="pale_yellow">#FFF3D3</color>
+    <color name="edit_text_background">#E9E9E9</color>
+    <color name="main_black">#181212</color>
+    <color name="white_ripple_color">#1FFFFFFF</color>
+
 </resources>

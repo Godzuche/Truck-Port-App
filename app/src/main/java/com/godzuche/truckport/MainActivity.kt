@@ -5,16 +5,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.*
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowCompat
-import androidx.core.view.WindowInsetsCompat
-import androidx.core.view.WindowInsetsControllerCompat
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
-import androidx.transition.Slide
-import androidx.transition.TransitionManager
 import com.godzuche.truckport.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
@@ -42,37 +37,46 @@ class MainActivity : AppCompatActivity() {
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         navController = navHostFragment.navController
 
-        setupActionBarWithNavController(navController)
+        val topLevelDestinations = setOf(R.id.loginFragment, R.id.signUpFragment)
+        val appBarConfiguration = AppBarConfiguration(topLevelDestinations)
+        setupActionBarWithNavController(navController, appBarConfiguration)
 
         bottomNavigationView.setupWithNavController(navController)
 
         navController.addOnDestinationChangedListener { controller, destination, arguments ->
             when (destination.id) {
-                R.id.onboardingFragment -> hideTopAppBarAndBottomNav()
-                else -> showTopAppBarAndBottomNav()
+                R.id.onboardingFragment -> hideTopAppAndStatusBar()
+                R.id.signUpFragment -> {
+                    showTopAppAndStatusBar()
+                    hideStatusBar()
+                }
+                R.id.loginFragment -> {
+                    showTopAppAndStatusBar()
+                    hideStatusBar()
+                }
+                else -> showTopAppAndStatusBar()
             }
         }
     }
 
-    private fun showTopAppBarAndBottomNav() {
+    private fun showTopAppAndStatusBar() {
         binding.appBarMain.toolbarMain.visibility = View.VISIBLE
         bottomNavigationView.visibility = View.VISIBLE
-        showSystemBars()
+        showStatusBar()
     }
 
-    private fun hideTopAppBarAndBottomNav() {
+    private fun hideTopAppAndStatusBar() {
         binding.appBarMain.toolbarMain.visibility = View.GONE
         bottomNavigationView.visibility = View.GONE
-        hideSystemBars()
+        hideStatusBar()
     }
 
-    private fun hideSystemBars() {
-//        window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
-        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
+    private fun hideStatusBar() {
+        window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
     }
 
-    private fun showSystemBars() {
-        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_VISIBLE
+    private fun showStatusBar() {
+        window.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS)
     }
 
 }
