@@ -22,18 +22,18 @@
             android:layout_height="0dp"
             android:scaleType="centerCrop"
             android:src="@drawable/rectangle_4"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/tv_title"
             android:layout_width="282dp"
             android:layout_height="33dp"
-            android:fontFamily="@font/rubi_bold"
             android:layout_marginStart="23dp"
             android:layout_marginTop="400dp"
+            android:fontFamily="@font/rubi_bold"
             android:text="Let's get started"
             android:textColor="@color/white"
             android:textSize="25sp"
@@ -44,8 +44,8 @@
             android:id="@+id/tv_description"
             android:layout_width="303dp"
             android:layout_height="75dp"
-            android:fontFamily="@font/rubik"
             android:layout_marginTop="8dp"
+            android:fontFamily="@font/rubik"
             android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tincidunt massa etiam dolor erat. Mi vitae."
             android:textColor="@color/white"
             android:textSize="16sp"
@@ -54,26 +54,26 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/bt_next"
+            style="@style/RedFilledButton"
             android:layout_width="330dp"
             android:layout_height="48dp"
             android:layout_marginTop="31dp"
             android:layout_marginEnd="23dp"
             android:text="Next"
-            style="@style/RedFilledButton"
-            app:layout_constraintStart_toStartOf="@id/tv_title"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/tv_title"
             app:layout_constraintTop_toBottomOf="@id/tv_description" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/bt_login"
+            style="@style/WhiteOutlinedButton"
             android:layout_width="330dp"
             android:layout_height="48dp"
             android:layout_marginTop="8dp"
             android:text="Login"
             android:visibility="gone"
-            style="@style/WhiteOutlinedButton"
-            app:layout_constraintStart_toStartOf="@id/bt_next"
             app:layout_constraintEnd_toEndOf="@id/bt_next"
+            app:layout_constraintStart_toStartOf="@id/bt_next"
             app:layout_constraintTop_toBottomOf="@id/bt_next" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

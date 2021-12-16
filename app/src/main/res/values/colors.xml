@@ -17,5 +17,6 @@
     <color name="edit_text_background">#E9E9E9</color>
     <color name="main_black">#181212</color>
     <color name="white_ripple_color">#1FFFFFFF</color>
+    <color name="grey_stroke_color">#A7A5A5</color>
 
 </resources>
