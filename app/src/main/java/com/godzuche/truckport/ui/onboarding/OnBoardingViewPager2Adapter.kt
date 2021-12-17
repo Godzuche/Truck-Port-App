@@ -85,9 +85,9 @@ class OnBoardingViewPager2Adapter(
         private fun MaterialTextView.alterMargin() {
             val layoutParams = this.layoutParams as ConstraintLayout.LayoutParams
             layoutParams.setMargins(23,
-                // Convert 344 dp to Int
+                // Convert 396 dp to Int
                 TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,
-                    344F,
+                    396F,
                     context.resources.displayMetrics)
                     .toInt(), 0, 0)
             this.layoutParams = layoutParams

@@ -7,14 +7,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.godzuche.truckport.R
-import com.godzuche.truckport.databinding.FragmentSignUpBinding
+import com.godzuche.truckport.databinding.FragmentUserRegistrationBinding
 
-class SignUpFragment : Fragment() {
-    private lateinit var binding: FragmentSignUpBinding
+class UserRegistrationFragment : Fragment() {
+    private lateinit var binding: FragmentUserRegistrationBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
     }
 
     override fun onCreateView(
@@ -22,19 +21,19 @@ class SignUpFragment : Fragment() {
         savedInstanceState: Bundle?,
     ): View? {
         // Inflate the layout for this fragment
-        binding = FragmentSignUpBinding.inflate(inflater, container, false)
+        binding = FragmentUserRegistrationBinding.inflate(inflater, container, false)
         val view = binding.root
         return view
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding.apply {
-            btProceed.setOnClickListener { proceedToOtpFragment() }
+            btProceed.setOnClickListener { proceedToNextScreen() }
         }
     }
 
-    private fun proceedToOtpFragment() {
-        val action = SignUpFragmentDirections.actionSignUpFragmentToOtpVerificationFragment()
+    private fun proceedToNextScreen() {
+        val action = UserRegistrationFragmentDirections.actionUserRegistrationFragmentToWelcomeFragment()
         findNavController().navigate(action)
     }
 

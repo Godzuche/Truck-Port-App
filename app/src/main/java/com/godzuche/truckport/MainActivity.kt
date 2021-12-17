@@ -27,6 +27,9 @@ class MainActivity : AppCompatActivity() {
         installSplashScreen()
         setContentView(view)
 
+        // Set the title to empty string
+        title = ""
+
         // Set orientation to portrait
         this.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
 
@@ -37,7 +40,7 @@ class MainActivity : AppCompatActivity() {
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         navController = navHostFragment.navController
 
-        val topLevelDestinations = setOf(R.id.loginFragment, R.id.signUpFragment)
+        val topLevelDestinations = setOf(R.id.loginFragment, R.id.signUpFragment, R.id.userRegistrationFragment, R.id.welcomeFragment)
         val appBarConfiguration = AppBarConfiguration(topLevelDestinations)
         setupActionBarWithNavController(navController, appBarConfiguration)
 
@@ -45,30 +48,58 @@ class MainActivity : AppCompatActivity() {
 
         navController.addOnDestinationChangedListener { controller, destination, arguments ->
             when (destination.id) {
-                R.id.onboardingFragment -> hideTopAppAndStatusBar()
+                R.id.onboardingFragment -> {
+                    hideStatusBar()
+                    hideNavBar()
+                    hideTopAppBar()
+                }
                 R.id.signUpFragment -> {
-                    showTopAppAndStatusBar()
+                    hideNavBar()
+                    showTopAppBar()
                     hideStatusBar()
                 }
                 R.id.loginFragment -> {
-                    showTopAppAndStatusBar()
+                    hideNavBar()
+                    showTopAppBar()
                     hideStatusBar()
                 }
-                else -> showTopAppAndStatusBar()
+                else -> {
+                    showTopAppBar()
+                    showNavBar()
+                    showStatusBar()
+                }
             }
         }
     }
 
+    override fun onSupportNavigateUp(): Boolean {
+        return navController.navigateUp() || super.onSupportNavigateUp()
+    }
+
     private fun showTopAppAndStatusBar() {
-        binding.appBarMain.toolbarMain.visibility = View.VISIBLE
-        bottomNavigationView.visibility = View.VISIBLE
+        showTopAppBar()
         showStatusBar()
     }
 
     private fun hideTopAppAndStatusBar() {
-        binding.appBarMain.toolbarMain.visibility = View.GONE
-        bottomNavigationView.visibility = View.GONE
+        showTopAppBar()
         hideStatusBar()
+    }
+
+    private fun showNavBar(){
+        bottomNavigationView.visibility = View.VISIBLE
+    }
+
+    private fun hideNavBar(){
+        bottomNavigationView.visibility = View.GONE
+    }
+
+    private fun showTopAppBar() {
+        binding.appBarMain.toolbarMain.visibility = View.VISIBLE
+    }
+
+    private fun hideTopAppBar() {
+        binding.appBarMain.toolbarMain.visibility = View.GONE
     }
 
     private fun hideStatusBar() {
