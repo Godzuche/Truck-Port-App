@@ -1,4 +1,4 @@
-package com.godzuche.truckport.auth.signup
+package com.godzuche.truckport.ui.auth.signup
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,14 +6,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
-import com.godzuche.truckport.databinding.FragmentOtpVerificationBinding
+import com.godzuche.truckport.databinding.FragmentUserRegistrationBinding
 
-class OtpVerificationFragment : Fragment() {
-    private lateinit var binding: FragmentOtpVerificationBinding
+class UserRegistrationFragment : Fragment() {
+    private lateinit var binding: FragmentUserRegistrationBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
     }
 
     override fun onCreateView(
@@ -21,20 +20,19 @@ class OtpVerificationFragment : Fragment() {
         savedInstanceState: Bundle?,
     ): View? {
         // Inflate the layout for this fragment
-        binding = FragmentOtpVerificationBinding.inflate(inflater, container, false)
+        binding = FragmentUserRegistrationBinding.inflate(inflater, container, false)
         val view = binding.root
         return view
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding.apply {
-            btProceed.setOnClickListener { proceedToUserRegFragment() }
+            btProceed.setOnClickListener { proceedToNextScreen() }
         }
     }
 
-    private fun proceedToUserRegFragment() {
-        val action =
-            OtpVerificationFragmentDirections.actionOtpVerificationFragmentToUserRegistrationFragment()
+    private fun proceedToNextScreen() {
+        val action = UserRegistrationFragmentDirections.actionUserRegistrationFragmentToWelcomeFragment()
         findNavController().navigate(action)
     }
 

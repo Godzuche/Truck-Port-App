@@ -1,4 +1,4 @@
-package com.godzuche.truckport.auth.login
+package com.godzuche.truckport.ui.auth.login
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

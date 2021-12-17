@@ -1,9 +1,11 @@
 package com.godzuche.truckport
 
 import android.content.pm.ActivityInfo
-import androidx.appcompat.app.AppCompatActivity
+import android.graphics.Color
 import android.os.Bundle
-import android.view.*
+import android.view.View
+import android.view.WindowManager
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
@@ -37,39 +39,56 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
         bottomNavigationView = binding.bottomNavView
 
-        val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+        val navHostFragment =
+            supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         navController = navHostFragment.navController
 
-        val topLevelDestinations = setOf(R.id.loginFragment, R.id.signUpFragment, R.id.userRegistrationFragment, R.id.welcomeFragment)
+        val topLevelDestinations = setOf(R.id.loginFragment,
+            R.id.signUpFragment,
+            R.id.userRegistrationFragment,
+            R.id.welcomeFragment,
+            R.id.customerDashboardFragment,
+            R.id.onboardingFragment)
         val appBarConfiguration = AppBarConfiguration(topLevelDestinations)
         setupActionBarWithNavController(navController, appBarConfiguration)
 
         bottomNavigationView.setupWithNavController(navController)
 
-        navController.addOnDestinationChangedListener { controller, destination, arguments ->
-            when (destination.id) {
-                R.id.onboardingFragment -> {
-                    hideStatusBar()
-                    hideNavBar()
-                    hideTopAppBar()
-                }
-                R.id.signUpFragment -> {
-                    hideNavBar()
-                    showTopAppBar()
-                    hideStatusBar()
-                }
-                R.id.loginFragment -> {
-                    hideNavBar()
-                    showTopAppBar()
-                    hideStatusBar()
-                }
-                else -> {
-                    showTopAppBar()
-                    showNavBar()
-                    showStatusBar()
-                }
-            }
-        }
+        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+
+         navController.addOnDestinationChangedListener { controller, destination, arguments ->
+             when (destination.id) {
+                 R.id.onboardingFragment -> {
+                     hideNavBar()
+                     hideTopAppBar()
+                 }
+                 R.id.signUpFragment -> {
+                     hideNavBar()
+                     showTopAppBar()
+                 }
+                 R.id.loginFragment -> {
+                     hideNavBar()
+                     showTopAppBar()
+                 }
+                 R.id.otpVerificationFragment -> {
+                     hideNavBar()
+                     showTopAppBar()
+                 }
+                 R.id.userRegistrationFragment -> {
+                     hideNavBar()
+                     showTopAppBar()
+                 }
+                 R.id.welcomeFragment -> {
+                     hideNavBar()
+                     hideTopAppBar()
+                 }
+                 else -> {
+                     showTopAppBar()
+                     showNavBar()
+                 }
+             }
+         }
     }
 
     override fun onSupportNavigateUp(): Boolean {
@@ -86,11 +105,11 @@ class MainActivity : AppCompatActivity() {
         hideStatusBar()
     }
 
-    private fun showNavBar(){
+    private fun showNavBar() {
         bottomNavigationView.visibility = View.VISIBLE
     }
 
-    private fun hideNavBar(){
+    private fun hideNavBar() {
         bottomNavigationView.visibility = View.GONE
     }
 
@@ -103,11 +122,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun hideStatusBar() {
-        window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
+        window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+            WindowManager.LayoutParams.FLAG_FULLSCREEN)
     }
 
     private fun showStatusBar() {
-        window.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS)
+        window.clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN)
     }
 
 }

@@ -22,7 +22,7 @@
     </fragment>
     <fragment
         android:id="@+id/signUpFragment"
-        android:name="com.godzuche.truckport.auth.signup.SignUpFragment"
+        android:name="com.godzuche.truckport.ui.auth.signup.SignUpFragment"
         tools:layout="@layout/fragment_sign_up" >
         <action
             android:id="@+id/action_signUpFragment_to_otpVerificationFragment"
@@ -30,12 +30,12 @@
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.godzuche.truckport.auth.login.LoginFragment"
+        android:name="com.godzuche.truckport.ui.auth.login.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" />
     <fragment
         android:id="@+id/otpVerificationFragment"
-        android:name="com.godzuche.truckport.auth.signup.OtpVerificationFragment"
+        android:name="com.godzuche.truckport.ui.auth.signup.OtpVerificationFragment"
         tools:layout="@layout/fragment_otp_verification" >
         <action
             android:id="@+id/action_otpVerificationFragment_to_userRegistrationFragment"
@@ -45,7 +45,7 @@
     </fragment>
     <fragment
         android:id="@+id/userRegistrationFragment"
-        android:name="com.godzuche.truckport.auth.signup.UserRegistrationFragment"
+        android:name="com.godzuche.truckport.ui.auth.signup.UserRegistrationFragment"
         tools:layout="@layout/fragment_user_registration" >
         <action
             android:id="@+id/action_userRegistrationFragment_to_welcomeFragment"
@@ -55,6 +55,17 @@
     </fragment>
     <fragment
         android:id="@+id/welcomeFragment"
-        android:name="com.godzuche.truckport.auth.signup.WelcomeFragment"
-        tools:layout="@layout/fragment_welcome" />
+        android:name="com.godzuche.truckport.ui.auth.signup.WelcomeFragment"
+        tools:layout="@layout/fragment_welcome" >
+        <action
+            android:id="@+id/action_welcomeFragment_to_customerDashboardFragment"
+            app:destination="@id/customerDashboardFragment"
+            app:popUpTo="@id/nav_graph_main.xml"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/customerDashboardFragment"
+        android:name="com.godzuche.truckport.ui.dashboard.customer.CustomerDashboardFragment"
+        android:label="fragment_customer_dashboard"
+        tools:layout="@layout/fragment_customer_dashboard" />
 </navigation>
