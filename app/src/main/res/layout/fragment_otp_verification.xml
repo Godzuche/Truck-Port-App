@@ -63,10 +63,12 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/et_otp_1"
+                android:gravity="center"
+                android:textAlignment="center"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:fontFamily="@font/rubik"
-                android:inputType="numberDecimal"
+                android:inputType="numberPassword"
                 android:textColor="@color/black"
                 android:textSize="16sp" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -92,8 +94,10 @@
                 android:id="@+id/et_otp_2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:gravity="center"
+                android:textAlignment="center"
                 android:fontFamily="@font/rubik"
-                android:inputType="numberDecimal"
+                android:inputType="numberPassword"
                 android:textColor="@color/black"
                 android:textSize="16sp" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -119,8 +123,10 @@
                 android:id="@+id/et_otp_3"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:gravity="center"
+                android:textAlignment="center"
                 android:fontFamily="@font/rubik"
-                android:inputType="numberDecimal"
+                android:inputType="numberPassword"
                 android:textColor="@color/black"
                 android:textSize="16sp" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -146,8 +152,10 @@
                 android:id="@+id/et_otp_4"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:gravity="center"
+                android:textAlignment="center"
                 android:fontFamily="@font/rubik"
-                android:inputType="numberDecimal"
+                android:inputType="numberPassword"
                 android:textColor="@color/black"
                 android:textSize="16sp" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -173,8 +181,10 @@
                 android:id="@+id/et_otp_5"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:gravity="center"
+                android:textAlignment="center"
                 android:fontFamily="@font/rubik"
-                android:inputType="numberDecimal"
+                android:inputType="numberPassword"
                 android:textColor="@color/black"
                 android:textSize="16sp" />
         </com.google.android.material.textfield.TextInputLayout>

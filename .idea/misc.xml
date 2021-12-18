@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/TruckPort/app/src/main/res/drawable/circular_nav_view.xml" value="0.21388888888888888" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/TruckPort/app/src/main/res/drawable/circular_transparent_background.xml" value="0.21388888888888888" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/TruckPort/app/src/main/res/drawable/gradient_background.xml" value="0.2111111111111111" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/TruckPort/app/src/main/res/drawable/gradient_background1.xml" value="0.109375" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/TruckPort/app/src/main/res/drawable/gradient_background2.xml" value="0.2111111111111111" />
@@ -13,6 +15,7 @@
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/TruckPort/app/src/main/res/layout/activity_main.xml" value="0.203125" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/TruckPort/app/src/main/res/layout/app_bar_main.xml" value="0.203125" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/TruckPort/app/src/main/res/layout/content_main.xml" value="0.203125" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/TruckPort/app/src/main/res/layout/customer_db_rv_item_layout.xml" value="0.20677083333333332" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/TruckPort/app/src/main/res/layout/drop_item_country.xml" value="0.20677083333333332" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/TruckPort/app/src/main/res/layout/fragment_customer_dashboard.xml" value="0.20677083333333332" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/TruckPort/app/src/main/res/layout/fragment_login.xml" value="0.20677083333333332" />

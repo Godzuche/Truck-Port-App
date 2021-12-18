@@ -54,41 +54,44 @@ class MainActivity : AppCompatActivity() {
 
         bottomNavigationView.setupWithNavController(navController)
 
-        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+//        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN or View.SYSTEM_UI_FLAG_LAYOUT_STABLE
 
-         navController.addOnDestinationChangedListener { controller, destination, arguments ->
-             when (destination.id) {
-                 R.id.onboardingFragment -> {
-                     hideNavBar()
-                     hideTopAppBar()
-                 }
-                 R.id.signUpFragment -> {
-                     hideNavBar()
-                     showTopAppBar()
-                 }
-                 R.id.loginFragment -> {
-                     hideNavBar()
-                     showTopAppBar()
-                 }
-                 R.id.otpVerificationFragment -> {
-                     hideNavBar()
-                     showTopAppBar()
-                 }
-                 R.id.userRegistrationFragment -> {
-                     hideNavBar()
-                     showTopAppBar()
-                 }
-                 R.id.welcomeFragment -> {
-                     hideNavBar()
-                     hideTopAppBar()
-                 }
-                 else -> {
-                     showTopAppBar()
-                     showNavBar()
-                 }
-             }
-         }
+        navController.addOnDestinationChangedListener { controller, destination, arguments ->
+            when (destination.id) {
+                R.id.onboardingFragment -> {
+                    hideNavBar()
+                    hideTopAppBar()
+                }
+                R.id.signUpFragment -> {
+                    hideNavBar()
+                    showTopAppBar()
+                }
+                R.id.loginFragment -> {
+                    hideNavBar()
+                    showTopAppBar()
+                }
+                R.id.otpVerificationFragment -> {
+                    hideNavBar()
+                    showTopAppBar()
+                }
+                R.id.userRegistrationFragment -> {
+                    hideNavBar()
+                    showTopAppBar()
+                }
+                R.id.welcomeFragment -> {
+                    hideNavBar()
+                    hideTopAppBar()
+                }
+                R.id.customerDashboardFragment -> {
+                    showNavBar()
+                    hideTopAppBar()
+                }
+                else -> {
+                    showTopAppBar()
+                    showNavBar()
+                }
+            }
+        }
     }
 
     override fun onSupportNavigateUp(): Boolean {
@@ -101,7 +104,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun hideTopAppAndStatusBar() {
-        showTopAppBar()
+        hideTopAppBar()
         hideStatusBar()
     }
 

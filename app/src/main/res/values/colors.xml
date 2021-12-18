@@ -18,5 +18,13 @@
     <color name="main_black">#181212</color>
     <color name="white_ripple_color">#1FFFFFFF</color>
     <color name="grey_stroke_color">#A7A5A5</color>
+    <color name="black_tool_bar_color">#0A0A0A</color>
+    <color name="nav_view_border">#DAD3D3</color>
+    
+    <color name="purple">#7300A9</color>
+    <color name="blue">#003D86</color>
+    <color name="red">#AE0C0C</color>
+    <color name="yellow">#C08C00</color>
+
 
 </resources>
