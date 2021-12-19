@@ -86,6 +86,10 @@ class MainActivity : AppCompatActivity() {
                     showNavBar()
                     hideTopAppBar()
                 }
+                R.id.bookDeliveryFragment -> {
+                    hideNavBar()
+                    showTopAppBar()
+                }
                 else -> {
                     showTopAppBar()
                     showNavBar()

@@ -1,14 +1,11 @@
-package com.godzuche.truckport.ui.dashboard.customer
+package com.godzuche.truckport.ui.customer.dashboard
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.StaggeredGridLayoutManager
-import com.godzuche.truckport.R
 import com.godzuche.truckport.databinding.FragmentCustomerDashboardBinding
 
 class CustomerDashboardFragment : Fragment() {

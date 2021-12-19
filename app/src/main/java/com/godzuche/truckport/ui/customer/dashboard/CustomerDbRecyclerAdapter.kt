@@ -1,12 +1,11 @@
-package com.godzuche.truckport.ui.dashboard.customer
+package com.godzuche.truckport.ui.customer.dashboard
 
 import android.content.Context
-import android.content.res.Resources
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.core.content.ContextCompat
-import androidx.core.content.res.ResourcesCompat
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.godzuche.truckport.R
 import com.godzuche.truckport.databinding.CustomerDbRvItemLayoutBinding
@@ -39,7 +38,21 @@ class CustomerDbRecyclerAdapter(private val context: Context) :
         )
     )
 
-    inner class ViewHolder(binding: CustomerDbRvItemLayoutBinding) :
+    private val inflater = LayoutInflater.from(context)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        val binding = CustomerDbRvItemLayoutBinding.inflate(inflater, parent, false)
+        return ViewHolder(binding)
+    }
+
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        val item = itemList[position]
+        holder.bind(item, position)
+        holder.cardView.setOnClickListener { holder.onClickCardView(item, position) }
+    }
+
+    override fun getItemCount() = itemList.size
+
+    inner class ViewHolder(val binding: CustomerDbRvItemLayoutBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
         val cardView: MaterialCardView = binding.cardView
@@ -92,18 +105,28 @@ class CustomerDbRecyclerAdapter(private val context: Context) :
             }
         }
 
+        fun onClickCardView(item: CustomerDbRvItemModel, position: Int) {
+            when (position) {
+                0 -> {
+                    val action = CustomerDashboardFragmentDirections.actionCustomerDashboardFragmentToBookDeliveryFragment()
+                    val view = binding.root
+                    view.findNavController().navigate(action)
+                }
+                1 -> {
+
+                }
+                2 -> {
+
+                }
+                3 -> {
+                }
+                else -> {
+
+                }
+            }
+        }
+
     }
 
-    private val inflater = LayoutInflater.from(context)
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val binding = CustomerDbRvItemLayoutBinding.inflate(inflater, parent, false)
-        return ViewHolder(binding)
-    }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val item = itemList[position]
-        holder.bind(item, position)
-    }
-
-    override fun getItemCount() = itemList.size
 }

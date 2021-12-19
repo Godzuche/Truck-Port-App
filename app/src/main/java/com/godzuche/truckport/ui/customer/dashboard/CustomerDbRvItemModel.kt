@@ -1,4 +1,4 @@
-package com.godzuche.truckport.ui.dashboard.customer
+package com.godzuche.truckport.ui.customer.dashboard
 
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes

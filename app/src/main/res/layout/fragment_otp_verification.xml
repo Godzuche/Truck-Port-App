@@ -9,9 +9,9 @@
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/tv_get_started"
         android:layout_width="296dp"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
         android:layout_marginStart="23dp"
-        android:layout_marginTop="65dp"
+        android:layout_marginTop="74dp"
         android:maxLines="2"
         android:text="Phone Number Verification"
         android:textColor="@color/black"
@@ -22,9 +22,9 @@
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/tv_enter_otp"
-        android:layout_width="303dp"
-        android:layout_height="31dp"
-        android:layout_marginTop="11dp"
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:layout_marginTop="7dp"
         android:fontFamily="@font/rubik"
         android:text="Enter 5 Digit code for phone Verification"
         android:textColor="@color/black"
@@ -37,6 +37,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="23dp"
+        android:layout_marginTop="18dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@id/tv_enter_otp"
@@ -69,6 +70,7 @@
                 android:layout_height="match_parent"
                 android:fontFamily="@font/rubik"
                 android:inputType="numberPassword"
+                android:maxLength="1"
                 android:textColor="@color/black"
                 android:textSize="16sp" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -95,6 +97,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center"
+                android:maxLength="1"
                 android:textAlignment="center"
                 android:fontFamily="@font/rubik"
                 android:inputType="numberPassword"
@@ -124,6 +127,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center"
+                android:maxLength="1"
                 android:textAlignment="center"
                 android:fontFamily="@font/rubik"
                 android:inputType="numberPassword"
@@ -153,6 +157,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center"
+                android:maxLength="1"
                 android:textAlignment="center"
                 android:fontFamily="@font/rubik"
                 android:inputType="numberPassword"
@@ -182,6 +187,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center"
+                android:maxLength="1"
                 android:textAlignment="center"
                 android:fontFamily="@font/rubik"
                 android:inputType="numberPassword"
@@ -193,6 +199,7 @@
     </LinearLayout>
 
    <LinearLayout
+       android:gravity="top"
        android:layout_width="wrap_content"
        android:layout_height="wrap_content"
        app:layout_constraintTop_toBottomOf="@id/linear_layout_otp_fields"
@@ -207,7 +214,7 @@
            android:textSize="14sp"
            app:fontFamily="@font/rubi_bold"
            android:text="Didn't get code,"
-           android:gravity="end"
+           android:gravity="end|top"
            android:textAlignment="textEnd"/>
 
        <com.google.android.material.button.MaterialButton
@@ -219,7 +226,7 @@
            android:textSize="14sp"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
-           android:gravity="start"
+           android:gravity="start|top"
            android:insetLeft="0dp"
            android:text="resend code" />
 
@@ -230,7 +237,7 @@
         style="@style/RedFilledButton"
         android:layout_width="0dp"
         android:layout_height="48dp"
-        android:layout_marginTop="473dp"
+        android:layout_marginTop="558dp"
         android:layout_marginEnd="23dp"
         android:text="Proceed"
         app:layout_constraintEnd_toEndOf="parent"
