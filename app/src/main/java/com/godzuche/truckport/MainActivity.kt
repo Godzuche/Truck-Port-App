@@ -1,7 +1,6 @@
 package com.godzuche.truckport
 
 import android.content.pm.ActivityInfo
-import android.graphics.Color
 import android.os.Bundle
 import android.view.View
 import android.view.WindowManager
@@ -63,7 +62,7 @@ class MainActivity : AppCompatActivity() {
                     hideTopAppBar()
                 }
                 R.id.signUpFragment -> {
-                    hideNavBar()
+//                    hideNavBar()
                     showTopAppBar()
                 }
                 R.id.loginFragment -> {
@@ -71,22 +70,22 @@ class MainActivity : AppCompatActivity() {
                     showTopAppBar()
                 }
                 R.id.otpVerificationFragment -> {
-                    hideNavBar()
+//                    hideNavBar()
                     showTopAppBar()
                 }
                 R.id.userRegistrationFragment -> {
-                    hideNavBar()
+//                    hideNavBar()
                     showTopAppBar()
                 }
                 R.id.welcomeFragment -> {
-                    hideNavBar()
+//                    hideNavBar()
                     hideTopAppBar()
                 }
                 R.id.customerDashboardFragment -> {
                     showNavBar()
                     hideTopAppBar()
                 }
-                R.id.bookDeliveryFragment -> {
+                R.id.bikeDeliveryFragment -> {
                     hideNavBar()
                     showTopAppBar()
                 }

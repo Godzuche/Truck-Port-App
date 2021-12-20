@@ -71,12 +71,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="92dp"
-        android:elevation="16dp"
+        android:elevation="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
         android:background="@drawable/circular_transparent_background"
         android:layout_marginBottom="8dp"/>
 
     <androidx.recyclerview.widget.RecyclerView
+        android:elevation="4dp"
         android:clipToPadding="false"
         android:id="@+id/rv_services"
         android:layout_width="wrap_content"

@@ -1,16 +1,15 @@
 package com.godzuche.truckport.ui.customer.bike
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.godzuche.truckport.R
-import com.godzuche.truckport.databinding.FragmentBookDeliveryBinding
+import androidx.fragment.app.Fragment
+import com.godzuche.truckport.databinding.FragmentBikeDeliveryBinding
 
 
-class BookDeliveryFragment : Fragment() {
-    private lateinit var binding: FragmentBookDeliveryBinding
+class BikeDeliveryFragment : Fragment() {
+    private lateinit var binding: FragmentBikeDeliveryBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,7 +21,7 @@ class BookDeliveryFragment : Fragment() {
         savedInstanceState: Bundle?,
     ): View? {
         // Inflate the layout for this fragment
-        binding = FragmentBookDeliveryBinding.inflate(inflater, container, false)
+        binding = FragmentBikeDeliveryBinding.inflate(inflater, container, false)
         val view = binding.root
         return view
     }

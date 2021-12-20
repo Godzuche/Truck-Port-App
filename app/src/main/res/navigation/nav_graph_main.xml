@@ -70,11 +70,11 @@
         tools:layout="@layout/fragment_customer_dashboard" >
         <action
             android:id="@+id/action_customerDashboardFragment_to_bookDeliveryFragment"
-            app:destination="@id/bookDeliveryFragment" />
+            app:destination="@id/bikeDeliveryFragment" />
     </fragment>
     <fragment
-        android:id="@+id/bookDeliveryFragment"
-        android:name="com.godzuche.truckport.ui.customer.bike.BookDeliveryFragment"
+        android:id="@+id/bikeDeliveryFragment"
+        android:name="com.godzuche.truckport.ui.customer.bike.BikeDeliveryFragment"
         android:label="Book a delivery man"
-        tools:layout="@layout/fragment_book_delivery" />
+        tools:layout="@layout/fragment_bike_delivery" />
 </navigation>
