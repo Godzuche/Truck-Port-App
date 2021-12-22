@@ -3,7 +3,8 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
-    <string-array name="country_codes">
-        <item></item>
+    <string-array name="payment_methods">
+        <item>Cash</item>
+        <item>Transfer</item>
     </string-array>
 </resources>

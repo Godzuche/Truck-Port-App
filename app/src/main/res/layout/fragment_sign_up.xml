@@ -31,38 +31,6 @@
         app:layout_constraintStart_toStartOf="@id/tv_get_started"
         app:layout_constraintTop_toBottomOf="@id/tv_get_started" />
 
-    <!--    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/countries_drop_down"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-        app:layout_constraintTop_toBottomOf="@id/tv_enter_number"
-        app:layout_constraintStart_toStartOf="@id/tv_enter_number"
-        app:layout_constraintEnd_toStartOf="@id/il_mobile_number"
-        app:boxCornerRadiusTopStart="5dp"
-        app:boxCornerRadiusBottomStart="5dp"
-        app:boxCornerRadiusTopEnd="0dp"
-        app:boxCornerRadiusBottomEnd="0dp"
-        app:boxBackgroundColor="@color/edit_text_background"
-        app:boxStrokeColor="@color/edit_text_background"
-        app:boxStrokeWidth="0dp"
-        app:hintTextColor="@color/black"
-        android:textColorHint="@color/black"
-        android:fontFamily="@font/rubik">
-
-        <AutoCompleteTextView
-            android:id="@+id/actV_countries_drop_item"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="+234"
-            android:inputType="none"
-            android:textSize="16sp"
-            android:fontFamily="@font/rubik_medium"
-            android:textColor="@color/black"/>
-
-    </com.google.android.material.textfield.TextInputLayout>-->
-
-
     <com.hbb20.CountryCodePicker
         android:id="@+id/ccp"
         android:layout_width="wrap_content"

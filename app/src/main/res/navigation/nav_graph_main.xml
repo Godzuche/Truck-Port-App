@@ -76,5 +76,14 @@
         android:id="@+id/bikeDeliveryFragment"
         android:name="com.godzuche.truckport.ui.customer.bike.BikeDeliveryFragment"
         android:label="Book a delivery man"
-        tools:layout="@layout/fragment_bike_delivery" />
+        tools:layout="@layout/fragment_bike_delivery" >
+        <action
+            android:id="@+id/action_bikeDeliveryFragment_to_deliveryDetailsFragment"
+            app:destination="@id/deliveryDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/deliveryDetailsFragment"
+        android:name="com.godzuche.truckport.ui.customer.bike.DeliveryDetailsFragment"
+        android:label="Book a delivery man"
+        tools:layout="@layout/fragment_delivery_details" />
 </navigation>

@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.godzuche.truckport.databinding.FragmentBikeDeliveryBinding
 
 
@@ -27,7 +28,14 @@ class BikeDeliveryFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        binding.apply {
+            btContinue.setOnClickListener { continueToDeliveryDetails() }
+        }
+    }
 
+    private fun continueToDeliveryDetails() {
+        val action = BikeDeliveryFragmentDirections.actionBikeDeliveryFragmentToDeliveryDetailsFragment()
+        findNavController().navigate(action)
     }
 
 }

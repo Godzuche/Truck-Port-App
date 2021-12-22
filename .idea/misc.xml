@@ -3,8 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/TruckPort/app/src/main/res/drawable/bottom_sheet_curved_rect.xml" value="0.20277777777777778" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/TruckPort/app/src/main/res/drawable/circular_nav_view.xml" value="0.21388888888888888" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/TruckPort/app/src/main/res/drawable/circular_transparent_background.xml" value="0.21388888888888888" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/TruckPort/app/src/main/res/drawable/custom_popup_background.xml" value="0.22291666666666668" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/TruckPort/app/src/main/res/drawable/gradient_background.xml" value="0.2111111111111111" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/TruckPort/app/src/main/res/drawable/gradient_background1.xml" value="0.109375" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/TruckPort/app/src/main/res/drawable/gradient_background2.xml" value="0.2111111111111111" />
@@ -18,9 +20,12 @@
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/TruckPort/app/src/main/res/layout/content_main.xml" value="0.203125" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/TruckPort/app/src/main/res/layout/customer_db_rv_item_layout.xml" value="0.20677083333333332" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/TruckPort/app/src/main/res/layout/destination_line.xml" value="0.20677083333333332" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/TruckPort/app/src/main/res/layout/drop_down_menu_item.xml" value="0.20677083333333332" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/TruckPort/app/src/main/res/layout/drop_item_country.xml" value="0.20677083333333332" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/TruckPort/app/src/main/res/layout/fragment_bike_delivery.xml" value="0.20677083333333332" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/TruckPort/app/src/main/res/layout/fragment_book_delivery.xml" value="0.20677083333333332" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/TruckPort/app/src/main/res/layout/fragment_customer_dashboard.xml" value="0.20677083333333332" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/TruckPort/app/src/main/res/layout/fragment_delivery_details.xml" value="0.20677083333333332" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/TruckPort/app/src/main/res/layout/fragment_login.xml" value="0.20677083333333332" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/TruckPort/app/src/main/res/layout/fragment_onboarding.xml" value="0.203125" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/TruckPort/app/src/main/res/layout/fragment_otp_verification.xml" value="0.22" />
@@ -28,6 +33,7 @@
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/TruckPort/app/src/main/res/layout/fragment_user_registration.xml" value="0.25" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/TruckPort/app/src/main/res/layout/fragment_welcome.xml" value="0.2" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/TruckPort/app/src/main/res/layout/item_country.xml" value="0.5" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/TruckPort/app/src/main/res/layout/modal_bottom_sheet_content.xml" value="0.19270833333333334" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/TruckPort/app/src/main/res/layout/onboarding_screen_item_layout.xml" value="0.2" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/TruckPort/app/src/main/res/menu/menu_bottom_nav.xml" value="0.203125" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/TruckPort/app/src/main/res/menu/menu_main_activity.xml" value="0.203125" />

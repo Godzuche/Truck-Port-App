@@ -4,8 +4,11 @@ import android.content.pm.ActivityInfo
 import android.os.Bundle
 import android.view.View
 import android.view.WindowManager
+import android.widget.FrameLayout
 import androidx.appcompat.app.AppCompatActivity
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import androidx.core.view.updateLayoutParams
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
@@ -13,6 +16,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.godzuche.truckport.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.bottomsheet.BottomSheetBehavior
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -55,6 +59,27 @@ class MainActivity : AppCompatActivity() {
 
 //        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN or View.SYSTEM_UI_FLAG_LAYOUT_STABLE
 
+        val standardBottomSheetBehaviour = BottomSheetBehavior.from(binding.appBarMain.standardBottomSheet)
+        standardBottomSheetBehaviour.apply {
+//            skipCollapsed = true
+            setPeekHeight(200, true)
+            isFitToContents = false
+            isHideable = true
+            isDraggable = false
+            saveFlags = BottomSheetBehavior.SAVE_ALL
+            state = BottomSheetBehavior.STATE_HIDDEN
+
+
+            addBottomSheetCallback(object: BottomSheetBehavior.BottomSheetCallback() {
+                override fun onStateChanged(bottomSheet: View, newState: Int) {
+                }
+
+                override fun onSlide(bottomSheet: View, slideOffset: Float) {
+                    binding.appBarMain.contentMain.root.setPadding(0, 0, 0, (bottomSheet.height * slideOffset + peekHeight + 8).toInt())
+                }
+            })
+        }
+
         navController.addOnDestinationChangedListener { controller, destination, arguments ->
             when (destination.id) {
                 R.id.onboardingFragment -> {
@@ -88,10 +113,10 @@ class MainActivity : AppCompatActivity() {
                 R.id.bikeDeliveryFragment -> {
                     hideNavBar()
                     showTopAppBar()
+                    standardBottomSheetBehaviour.state = BottomSheetBehavior.STATE_HIDDEN
                 }
-                else -> {
-                    showTopAppBar()
-                    showNavBar()
+                R.id.deliveryDetailsFragment -> {
+                    standardBottomSheetBehaviour.state = BottomSheetBehavior.STATE_COLLAPSED
                 }
             }
         }
