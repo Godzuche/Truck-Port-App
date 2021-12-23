@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/onboardingFragment"
-        android:name="com.godzuche.truckport.ui.onboarding.OnBoardingFragment"
+        android:name="com.carroza.logistics.carroza_app.ui.onboarding.OnBoardingFragment"
         tools:layout="@layout/fragment_onboarding" >
         <action
             android:id="@+id/action_onboardingFragment_to_signUpFragment"
@@ -22,7 +22,7 @@
     </fragment>
     <fragment
         android:id="@+id/signUpFragment"
-        android:name="com.godzuche.truckport.ui.auth.signup.SignUpFragment"
+        android:name="com.carroza.logistics.carroza_app.ui.auth.signup.SignUpFragment"
         tools:layout="@layout/fragment_sign_up" >
         <action
             android:id="@+id/action_signUpFragment_to_otpVerificationFragment"
@@ -30,12 +30,12 @@
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.godzuche.truckport.ui.auth.login.LoginFragment"
+        android:name="com.carroza.logistics.carroza_app.ui.auth.login.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" />
     <fragment
         android:id="@+id/otpVerificationFragment"
-        android:name="com.godzuche.truckport.ui.auth.signup.OtpVerificationFragment"
+        android:name="com.carroza.logistics.carroza_app.ui.auth.signup.OtpVerificationFragment"
         tools:layout="@layout/fragment_otp_verification" >
         <action
             android:id="@+id/action_otpVerificationFragment_to_userRegistrationFragment"
@@ -45,7 +45,7 @@
     </fragment>
     <fragment
         android:id="@+id/userRegistrationFragment"
-        android:name="com.godzuche.truckport.ui.auth.signup.UserRegistrationFragment"
+        android:name="com.carroza.logistics.carroza_app.ui.auth.signup.UserRegistrationFragment"
         tools:layout="@layout/fragment_user_registration" >
         <action
             android:id="@+id/action_userRegistrationFragment_to_welcomeFragment"
@@ -55,7 +55,7 @@
     </fragment>
     <fragment
         android:id="@+id/welcomeFragment"
-        android:name="com.godzuche.truckport.ui.auth.signup.WelcomeFragment"
+        android:name="com.carroza.logistics.carroza_app.ui.auth.signup.WelcomeFragment"
         tools:layout="@layout/fragment_welcome" >
         <action
             android:id="@+id/action_welcomeFragment_to_customerDashboardFragment"
@@ -65,7 +65,7 @@
     </fragment>
     <fragment
         android:id="@+id/customerDashboardFragment"
-        android:name="com.godzuche.truckport.ui.customer.dashboard.CustomerDashboardFragment"
+        android:name="com.carroza.logistics.carroza_app.ui.customer.dashboard.CustomerDashboardFragment"
         android:label="fragment_customer_dashboard"
         tools:layout="@layout/fragment_customer_dashboard" >
         <action
@@ -74,7 +74,7 @@
     </fragment>
     <fragment
         android:id="@+id/bikeDeliveryFragment"
-        android:name="com.godzuche.truckport.ui.customer.bike.BikeDeliveryFragment"
+        android:name="com.carroza.logistics.carroza_app.ui.customer.bike.BikeDeliveryFragment"
         android:label="Book a delivery man"
         tools:layout="@layout/fragment_bike_delivery" >
         <action
@@ -83,7 +83,7 @@
     </fragment>
     <fragment
         android:id="@+id/deliveryDetailsFragment"
-        android:name="com.godzuche.truckport.ui.customer.bike.DeliveryDetailsFragment"
+        android:name="com.carroza.logistics.carroza_app.ui.customer.bike.DeliveryDetailsFragment"
         android:label="Book a delivery man"
         tools:layout="@layout/fragment_delivery_details" />
 </navigation>
